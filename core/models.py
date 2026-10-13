@@ -1,4 +1,3 @@
-
 # Create your models here.
 from django.db import models
 # User: el modelo de usuario que Django ya trae incluido (login, contraseñas, sesiones)
@@ -8,10 +7,9 @@ from django.contrib.auth.models import User
 class Servicio(models.Model):
     # propietario: relaciona este servicio con el usuario dueño
     # on_delete=CASCADE: si se borra ese usuario, se borran también sus servicios
-    disponible = models.BooleanField(default=True) 
     propietario = models.ForeignKey(
-    User, on_delete=models.CASCADE, null=True, blank=True
-)
+        User, on_delete=models.CASCADE, null=True, blank=True
+    )
 
     # titulo: texto corto y obligatorio, máximo 120 caracteres
     titulo = models.CharField(max_length=120)
@@ -24,6 +22,9 @@ class Servicio(models.Model):
 
     # categoria: texto corto para clasificar el servicio (ej. "Tutorías", "Diseño")
     categoria = models.CharField(max_length=60)
+
+    # disponible: indica si el servicio está activo/disponible (por defecto en True)
+    disponible = models.BooleanField(default=True)
 
     # creado_en: Django guarda automáticamente la fecha y hora cuando se crea el registro
     creado_en = models.DateTimeField(auto_now_add=True)
