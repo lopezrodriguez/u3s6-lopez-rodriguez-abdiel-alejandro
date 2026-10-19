@@ -16,4 +16,4 @@ sus propios servicios (probado con usuario_a y usuario_b).
 <!-- ## : subtítulo de la sección con la prueba de aislamiento -->
 ## Prueba de aislamiento
 <!-- reemplaza el texto entre corchetes por la descripción de tu prueba -->
-Se crearon dos cuentas de prueba (`usuario_a` y `usuario_b`) y se registraron servicios distintos en cada una. Al iniciar sesión con `usuario_b`, la lista de servicios solo mostró sus propios registros. Posteriormente, desde la cuenta de `usuario_b` se intentó acceder manualmente a la URL de edición de un servicio perteneciente a `usuario_a` (`/servicios/1/editar/`), obteniendo como resultado una respuesta 404 que confirma el correcto aislamiento de los datos. 
+Cree dos usuarios, Lo-77 y Usuario_B respectivamente, los registre y cada uno registro servicios diferentes, estos mismos no se mezclan cuando entras a la otra cuenta, despues, desde otra cuenta saque la id de un registro y trate de entrar a ese registro de ese servicio de la otra cuenta mediante otra cuenta, pero salio un 404 page no found como deberia ser. 
