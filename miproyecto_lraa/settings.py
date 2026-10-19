@@ -192,4 +192,6 @@ MAILERS = {
 
 # LOGIN_URL: a dónde manda @login_required a quien quiere entrar sin haber iniciado sesión
 # '/admin/login/': por ahora usamos la pantalla de login del panel /admin; la Semana 6 la cambia por una propia
-LOGIN_URL = '/admin/login/' 
+LOGIN_URL = 'login' 
+
+LOGIN_REDIRECT_URL = 'servicios' 
